@@ -30,25 +30,180 @@ Host: https://lemon-coffee.herokuapp.com
 
 # 登入/註冊
 
-> To authorize, use this code:
+## 註冊
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
+const api = `${process.env.VUE_APP_API}/users`;
+const data = { user: { ... } }
+axios
+  .post(api, data)
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Success Response 200 Header
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+```json
+{ Authorization: "Bearer ..." }
+```
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+> Success Response 200 Body
 
-`Authorization: meowmeowmeow`
+```json
+{
+  "id": 264, 
+  "email": "user@example.com", 
+  "created_at": "2021-12-09T10:39:40.713Z", 
+  "updated_at": "2021-12-09T10:39:40.713Z",
+}
+```
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+
+
+> Error Response 422 (email 已經被使用)
+
+```json
+{ 
+  "errors": { 
+    "email": ["has already been taken"] 
+  }
+}
+```
+
+> Error Response 422 (密碼過短)
+
+```json
+{ 
+  "errors": { 
+    "password": ["is too short (minimum is 6 characters)"] 
+  }
+}
+```
+
+
+
+### HTTP Request
+
+`POST /users`
+
+### Data Parameters
+
+| Parameter | Description             | Type   |
+| --------- | ----------------------- | ------ |
+| email     | 使用者信箱              | String |
+| Password  | 使用者密碼，至少 6 個字 | String |
+
+
+
+<aside class="info">
+  註冊成功後，後端會回傳一組 JWT token。
+  在打需要權限的 API 請帶入此 token
 </aside>
+
+
+
+
+
+## 登入
+
+```javascript
+const api = `${process.env.VUE_APP_API}/users/sign_in`;
+const data = { user: { ... } }
+axios
+  .post(api, data)
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Success Response 200 Header
+
+```json
+{ Authorization: "Bearer ..." }
+```
+
+> Success Response 200 Body
+
+```json
+{
+  "id": 1, 
+  "email": "user@example.com", 
+  "created_at": "2021-12-09T10:39:40.713Z", 
+  "updated_at": "2021-12-09T10:39:40.713Z",
+}
+```
+
+
+
+> Error Response 401 (email 錯誤、密碼錯誤)
+
+```json
+{ 
+  "errors": { 
+    "email": ["Invalid Email or password."] 
+  }
+}
+```
+
+### HTTP Request
+
+`POST /users/sign_in`
+
+### Data Parameters
+
+| Parameter | Description | Type   |
+| --------- | ----------- | ------ |
+| email     | 使用者信箱  | String |
+| Password  | 使用者密碼  | String |
+
+
+
+<aside class="info">
+  登入成功後，後端會回傳一組 JWT token。
+  在打需要權限的 API 請帶入此 token
+</aside>
+
+
+
+## 登出
+
+```javascript
+const api = `${process.env.VUE_APP_API}/users/sign_out`;
+axios
+  .delete(api)
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Success Response 204
+
+```json
+
+```
+
+登出目前登入的使用者
+
+
+
+### HTTP Request
+
+`DELETE /users/sign_out`
+
+<aside class="info">
+  登出後，使用者的 JWT token 將會失效。
+</aside>
+
 
 
 
