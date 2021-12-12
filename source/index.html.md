@@ -207,6 +207,57 @@ axios
 
 
 
+# 首頁
+
+## 豆單資訊
+
+```javascript
+const api = `${process.env.VUE_APP_API}/products`;
+axios
+  .get(api)
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Success Response (200)
+
+```json
+[
+  {
+    "id": 1,
+    "name": "耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1",
+    "half_pound_price": 450,
+    "one_pound_price": 810,
+    "drip_bag_price": 40,
+    "roast": 1,
+    "flavor": ["藍莓", "柑橘", "花香"],
+    "created_at": "2021-12-09T13:10:26.072Z", 
+    "updated_at": "2021-12-09T13:10:26.072Z"
+  },
+  {
+    "id": 2,
+    "name": "水洗 衣索比亞 古吉 吉格薩",
+    "half_pound_price": 450,
+    "one_pound_price": 810,
+    "drip_bag_price": 40,
+    "roast": 1,
+    "flavor": ["巧克力"],
+    "created_at": "2021-12-09T13:10:26.072Z", 
+    "updated_at": "2021-12-09T13:10:26.072Z"
+  },
+]
+```
+
+取得販賣中的豆單資料
+
+### HTTP Request
+
+`GET /products`
+
 
 # 管理者頁面 / 豆單管理
 
