@@ -330,6 +330,25 @@
               </ul>
           </li>
           <li>
+            <a href="#fdf1f080a3" class="toc-h1 toc-link" data-title="首頁">首頁</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#3845b6e32f" class="toc-h2 toc-link" data-title="豆單資訊">豆單資訊</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#02c1e931de" class="toc-h1 toc-link" data-title="購物車">購物車</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#61bfb53b24" class="toc-h2 toc-link" data-title="取得使用者目前加入購物車的商品">取得使用者目前加入購物車的商品</a>
+                  </li>
+                  <li>
+                    <a href="#2d32c645d1" class="toc-h2 toc-link" data-title="將商品加入購物車">將商品加入購物車</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#cd497358a6" class="toc-h1 toc-link" data-title="管理者頁面 / 豆單管理">管理者頁面 / 豆單管理</a>
               <ul class="toc-list-h2">
                   <li>
@@ -524,6 +543,139 @@
 <aside class="info">
   登出後，使用者的 JWT token 將會失效。
 </aside>
+<h1 id='fdf1f080a3'>首頁</h1><h2 id='3845b6e32f'>豆單資訊</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/products`</span><span class="p">;</span>
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">api</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Success Response (200)</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"half_pound_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"one_pound_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">810</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"drip_bag_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roast"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"flavor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"藍莓"</span><span class="p">,</span><span class="w"> </span><span class="s2">"柑橘"</span><span class="p">,</span><span class="w"> </span><span class="s2">"花香"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-09T13:10:26.072Z"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-09T13:10:26.072Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗 衣索比亞 古吉 吉格薩"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"half_pound_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"one_pound_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">810</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"drip_bag_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"roast"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"flavor"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"巧克力"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-09T13:10:26.072Z"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-12-09T13:10:26.072Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>取得販賣中的豆單資料</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET /products</code></p>
+<h1 id='02c1e931de'>購物車</h1><h2 id='61bfb53b24'>取得使用者目前加入購物車的商品</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/cart_items`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">api</span><span class="p">,</span> <span class="p">{</span> <span class="nx">headers</span> <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Success Response 200</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">  
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">137</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"package_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"half_pound"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='http-request-need-jwt-token'>HTTP Request  (need JWT token)</h3>
+<p><code>GET /users/cart_items</code></p>
+<h2 id='2d32c645d1'>將商品加入購物車</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/cart_items`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">api</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="p">{</span> <span class="nx">headers</span> <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Request Data Example </p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"cart_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"package_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"half_pound"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Success Response 200</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"package_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"half_pound"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Error Response 400</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"must be greater than 0"</span><span class="p">],</span><span class="w"> 
+  </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"must exist"</span><span class="p">],</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-need-jwt-token-2'>HTTP Request  (need JWT token)</h3>
+<p><code>POST /users/cart_items</code></p>
+<h3 id='data-parameters-3'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product_id</td>
+<td>商品 ID</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>package_type</td>
+<td>包裝</td>
+<td>String: [half_pound, one_pound, drip_bag]</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>數量</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
 <h1 id='cd497358a6'>管理者頁面 / 豆單管理</h1><h2 id='d393e148ac'>取得所有豆子</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/admin/products`</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
 <span class="nx">axios</span>
@@ -560,7 +712,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>取得所有豆子的資料</p>
-<h3 id='http-request-need-jwt-token'>HTTP Request (need JWT token)</h3>
+<h3 id='http-request-need-jwt-token-3'>HTTP Request (need JWT token)</h3>
 <p><code>GET /admin/products</code></p>
 <h2 id='6844008e5d'>建立新豆子</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/admin/products`</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
@@ -606,9 +758,9 @@
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w"> 
   </span><span class="nl">"roast"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-need-jwt-token-2'>HTTP Request  (need JWT token)</h3>
+</span></code></pre></div><h3 id='http-request-need-jwt-token-4'>HTTP Request  (need JWT token)</h3>
 <p><code>POST /admin/products</code></p>
-<h3 id='data-parameters-3'>Data Parameters</h3>
+<h3 id='data-parameters-4'>Data Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -672,7 +824,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>回傳 ID 所對應的豆子的詳細資訊</p>
-<h3 id='http-request-need-jwt-token-3'>HTTP Request (need JWT token)</h3>
+<h3 id='http-request-need-jwt-token-5'>HTTP Request (need JWT token)</h3>
 <p><code>GET /admin/products/:id/edit</code> </p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -732,7 +884,7 @@
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w"> 
   </span><span class="nl">"roast"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-need-jwt-token-4'>HTTP Request  (need JWT token)</h3>
+</span></code></pre></div><h3 id='http-request-need-jwt-token-6'>HTTP Request  (need JWT token)</h3>
 <p><code>PUT /admin/products/:id</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -746,7 +898,7 @@
 <td>豆子的 ID</td>
 </tr>
 </tbody></table>
-<h3 id='data-parameters-4'>Data Parameters</h3>
+<h3 id='data-parameters-5'>Data Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -802,7 +954,7 @@
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
 </span></code></pre></div>
 <p>刪除 ID 所對應的豆子</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>DELETE /admin/products/:id</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
@@ -837,7 +989,7 @@
 <p>https://github.com/slatedocs/slate/wiki/Using-Slate-Natively</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-need-jwt-token-5'>HTTP Request  (need JWT token)</h3>
+<h3 id='http-request-need-jwt-token-7'>HTTP Request  (need JWT token)</h3>
 <p><code>GET http://example.com/kittens/:id</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
