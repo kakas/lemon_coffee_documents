@@ -259,6 +259,128 @@ axios
 `GET /products`
 
 
+
+
+
+# 購物車
+
+## 取得使用者目前加入購物車的商品
+
+```javascript
+const api = `${process.env.VUE_APP_API}/users/cart_items`;
+const headers = { Authorization: jwtToken };
+axios
+  .get(api, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Success Response 200
+
+```json
+[  
+  {
+    "product_id": 137, 
+    "product_name": "耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1", 
+    "package_type": "half_pound", 
+    "unit_price": 450
+    "quantity": 1, 
+  }
+]
+```
+
+
+
+### HTTP Request  (need JWT token)
+
+`GET /users/cart_items`
+
+
+
+
+
+
+
+## 將商品加入購物車
+
+```javascript
+const api = `${process.env.VUE_APP_API}/users/cart_items`;
+const headers = { Authorization: jwtToken };
+const data = { ... };
+axios
+  .post(api, data, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Request Data Example 
+
+```json
+{
+  "cart_item": {
+    "product_id": 152, 
+    "package_type": "half_pound", 
+    "quantity": 1
+  }
+}
+```
+
+> Success Response 200
+
+```json
+{
+  "product_id": 152, 
+  "product_name": "耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1", 
+  "package_type": "half_pound", 
+  "quantity": 1, 
+  "unit_price": 450
+}
+```
+
+> Error Response 400
+
+```json
+{ 
+  "quantity": ["must be greater than 0"], 
+  "product": ["must exist"],
+}
+```
+
+
+
+### HTTP Request  (need JWT token)
+
+`POST /users/cart_items`
+
+
+
+### Data Parameters
+
+| Parameter    | Description | Type                                      |
+| ------------ | ----------- | ----------------------------------------- |
+| product_id   | 商品 ID     | Integer                                   |
+| package_type | 包裝        | String: [half_pound, one_pound, drip_bag] |
+| quantity     | 數量        | Integer                                   |
+
+
+
+
+
+
+
+
+
+
+
+
 # 管理者頁面 / 豆單管理
 
 ## 取得所有豆子
