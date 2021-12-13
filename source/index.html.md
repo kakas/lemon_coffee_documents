@@ -380,6 +380,122 @@ axios
 
 
 
+## 更新購物車內某商品的購買數量
+
+```javascript
+const api = `${process.env.VUE_APP_API}/users/cart_items/${product_id}`;
+const headers = { Authorization: jwtToken };
+const data = { ... }
+axios
+  .put(api, data, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Request Data example
+
+```json
+"cart_item": {
+  "quantity": 2,
+}
+```
+
+> Success Response 200
+
+```json
+{
+  "quantity": 2,
+  "product_id": 152, 
+  "package_type": "half_pound", 
+  "product_name": "耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1", 
+  "unit_price": 450
+}
+```
+
+> Error Response 400
+
+```json
+{ 
+  "quantity": ["must be greater than 0"], 
+}
+```
+
+> Error Response 404 (找不到 product_id 對應的商品)
+
+```json
+```
+
+
+
+### HTTP Request  (need JWT token)
+
+`PUT /users/cart_items/:product_id`
+
+### URL Parameters
+
+| Parameter  | Description       |
+| ---------- | ----------------- |
+| product_id | 購物車內的商品 ID |
+
+### Data Parameters
+
+| Parameter | Description | Type    |
+| --------- | ----------- | ------- |
+| quantity  | 數量        | Integer |
+
+
+
+
+
+
+
+
+
+## 將商品從購物車移除
+
+```javascript
+const api = `${process.env.VUE_APP_API}/users/cart_items/${product_id}`;
+const headers = { Authorization: jwtToken };
+axios
+  .delete(api, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Success Response 204
+
+```json
+
+```
+
+
+
+### HTTP Request
+
+`DELETE /users/cart_items/:product_id`
+
+### URL Parameters
+
+| Parameter  | Description       |
+| ---------- | ----------------- |
+| product_id | 購物車內的商品 ID |
+
+
+
+
+
+
+
+
+
 
 # 管理者頁面 / 豆單管理
 
