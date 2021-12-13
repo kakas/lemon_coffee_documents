@@ -478,7 +478,7 @@ axios
 
 
 
-### HTTP Request
+### HTTP Request  (need JWT token)
 
 `DELETE /users/cart_items/:product_id`
 
