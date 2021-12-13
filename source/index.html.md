@@ -287,6 +287,7 @@ axios
   "drip_bag_price": 40,
   "roast": 1,
   "flavor": ["藍莓", "柑橘", "花香"],
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.jpg",
 }
 ```
 
@@ -336,7 +337,8 @@ axios
     "product_name": "耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1", 
     "package_type": "half_pound", 
     "unit_price": 450
-    "quantity": 1, 
+    "quantity": 1,
+    "product_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.jpg",
   }
 ]
 ```
