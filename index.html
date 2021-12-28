@@ -358,6 +358,17 @@
               </ul>
           </li>
           <li>
+            <a href="#bf6313d063" class="toc-h1 toc-link" data-title="使用者訂單相關">使用者訂單相關</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#30cf208529" class="toc-h2 toc-link" data-title="建立訂單">建立訂單</a>
+                  </li>
+                  <li>
+                    <a href="#7c692f78ee" class="toc-h2 toc-link" data-title="取得某筆訂單的資訊">取得某筆訂單的資訊</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#cd497358a6" class="toc-h1 toc-link" data-title="管理者頁面 / 豆單管理">管理者頁面 / 豆單管理</a>
               <ul class="toc-list-h2">
                   <li>
@@ -815,6 +826,167 @@
 <td>購物車內的商品 ID</td>
 </tr>
 </tbody></table>
+<h1 id='bf6313d063'>使用者訂單相關</h1><h2 id='30cf208529'>建立訂單</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/orders`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span> <span class="na">order</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">};</span>
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">api</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="p">{</span> <span class="nx">headers</span> <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Request Data Example </p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some note"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"shipping_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kakas"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0912345678"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110台北市信義區忠孝東路五段2號"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fake@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shipping_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_delivery"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Success Response 200</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">143</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"shipping_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_preparation"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payment_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outstanding"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash_on_delivery"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some note"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">146</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 - 耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"package_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"half_pound"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"shipping_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kakas"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0912345678"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110台北市信義區忠孝東路五段2號"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fake@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shipping_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_delivery"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shipping_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Error Response 400</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"cart"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"購物車不得為空"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-need-jwt-token-5'>HTTP Request  (need JWT token)</h3>
+<p><code>POST /users/orders</code></p>
+<h3 id='data-parameters-5'>Data Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>note</td>
+<td>備註</td>
+<td>String</td>
+</tr>
+<tr>
+<td>shipping_info.name</td>
+<td>收件人姓名</td>
+<td>String</td>
+</tr>
+<tr>
+<td>shipping_info.phone_number</td>
+<td>收件人電話</td>
+<td>String</td>
+</tr>
+<tr>
+<td>shipping_info.address</td>
+<td>收件人地址</td>
+<td>String</td>
+</tr>
+<tr>
+<td>shipping_info.email</td>
+<td>收件人 email</td>
+<td>String</td>
+</tr>
+<tr>
+<td>shipping_info.shipping_method</td>
+<td>寄送方式</td>
+<td>String: [home_delivery, ...(待補)]</td>
+</tr>
+</tbody></table>
+<h2 id='7c692f78ee'>取得某筆訂單的資訊</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/orders/</span><span class="p">${</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">api</span><span class="p">,</span> <span class="p">{</span> <span class="nx">headers</span> <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Success Response 200</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">156</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"shipping_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_preparation"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payment_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outstanding"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash_on_delivery"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">159</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ed Ondricka"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">134</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"package_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"half_pound"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"shipping_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alena Runte III"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0912345678"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"floretta@dare.org"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shipping_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home_delivery"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shipping_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>回傳 ID 所對應的豆子的詳細資訊</p>
+<h3 id='http-request-need-jwt-token-6'>HTTP Request (need JWT token)</h3>
+<p><code>GET /users/orders/:id</code> </p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>訂單的 ID</td>
+</tr>
+</tbody></table>
 <h1 id='cd497358a6'>管理者頁面 / 豆單管理</h1><h2 id='d393e148ac'>取得所有豆子</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/admin/products`</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
 <span class="nx">axios</span>
@@ -851,7 +1023,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>取得所有豆子的資料</p>
-<h3 id='http-request-need-jwt-token-5'>HTTP Request (need JWT token)</h3>
+<h3 id='http-request-need-jwt-token-7'>HTTP Request (need JWT token)</h3>
 <p><code>GET /admin/products</code></p>
 <h2 id='6844008e5d'>建立新豆子</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/admin/products`</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
@@ -897,9 +1069,9 @@
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w"> 
   </span><span class="nl">"roast"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-need-jwt-token-6'>HTTP Request  (need JWT token)</h3>
+</span></code></pre></div><h3 id='http-request-need-jwt-token-8'>HTTP Request  (need JWT token)</h3>
 <p><code>POST /admin/products</code></p>
-<h3 id='data-parameters-5'>Data Parameters</h3>
+<h3 id='data-parameters-6'>Data Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -963,9 +1135,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>回傳 ID 所對應的豆子的詳細資訊</p>
-<h3 id='http-request-need-jwt-token-7'>HTTP Request (need JWT token)</h3>
+<h3 id='http-request-need-jwt-token-9'>HTTP Request (need JWT token)</h3>
 <p><code>GET /admin/products/:id/edit</code> </p>
-<h3 id='url-parameters-3'>URL Parameters</h3>
+<h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1023,9 +1195,9 @@
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w"> 
   </span><span class="nl">"roast"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"can't be blank"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-need-jwt-token-8'>HTTP Request  (need JWT token)</h3>
+</span></code></pre></div><h3 id='http-request-need-jwt-token-10'>HTTP Request  (need JWT token)</h3>
 <p><code>PUT /admin/products/:id</code></p>
-<h3 id='url-parameters-4'>URL Parameters</h3>
+<h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1037,7 +1209,7 @@
 <td>豆子的 ID</td>
 </tr>
 </tbody></table>
-<h3 id='data-parameters-6'>Data Parameters</h3>
+<h3 id='data-parameters-7'>Data Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1095,7 +1267,7 @@
 <p>刪除 ID 所對應的豆子</p>
 <h3 id='http-request-6'>HTTP Request</h3>
 <p><code>DELETE /admin/products/:id</code></p>
-<h3 id='url-parameters-5'>URL Parameters</h3>
+<h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1128,9 +1300,9 @@
 <p>https://github.com/slatedocs/slate/wiki/Using-Slate-Natively</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-need-jwt-token-9'>HTTP Request  (need JWT token)</h3>
+<h3 id='http-request-need-jwt-token-11'>HTTP Request  (need JWT token)</h3>
 <p><code>GET http://example.com/kittens/:id</code></p>
-<h3 id='url-parameters-6'>URL Parameters</h3>
+<h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
