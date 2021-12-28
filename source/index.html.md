@@ -546,6 +546,173 @@ axios
 
 
 
+# 使用者訂單相關
+
+
+
+## 建立訂單
+
+```javascript
+const api = `${process.env.VUE_APP_API}/users/orders`;
+const headers = { Authorization: jwtToken };
+const data = { order: { ... } };
+axios
+  .post(api, data, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Request Data Example 
+
+```json
+{
+  "note": "some note",
+  "shipping_info": {
+    "name": "kakas",
+    "phone_number": "0912345678",
+    "address": "110台北市信義區忠孝東路五段2號",
+    "email": "fake@example.com",
+    "shipping_method": "home_delivery"
+  }
+}
+```
+
+> Success Response 200
+
+```json
+{
+  "id": 143,
+  "status": "pending",
+  "shipping_status": "in_preparation",
+  "payment_status": "outstanding",
+  "payment_method": "cash_on_delivery",
+  "note": "some note",
+  "items": [
+    {
+      "id": 146,
+      "name": "1 - 耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1",
+      "unit_price": 450,
+      "quantity": 1,
+      "package_type": "half_pound"
+    }
+  ],
+  "shipping_info": {
+    "name": "kakas",
+    "phone_number": "0912345678",
+    "address": "110台北市信義區忠孝東路五段2號",
+    "email": "fake@example.com",
+    "shipping_method": "home_delivery",
+    "shipping_fee": 100
+  }
+}
+```
+
+> Error Response 400
+
+```json
+{
+  "cart": ["購物車不得為空"],
+  "name": ["can't be blank"],
+  "phone_number": ["can't be blank"],
+  "address": ["can't be blank"],
+  "email": ["can't be blank"]
+}
+```
+
+
+
+### HTTP Request  (need JWT token)
+
+`POST /users/orders`
+
+### Data Parameters
+
+| Parameter                     | Description  | Type                               |
+| ----------------------------- | ------------ | ---------------------------------- |
+| note                          | 備註         | String                             |
+| shipping_info.name            | 收件人姓名   | String                             |
+| shipping_info.phone_number    | 收件人電話   | String                             |
+| shipping_info.address         | 收件人地址   | String                             |
+| shipping_info.email           | 收件人 email | String                             |
+| shipping_info.shipping_method | 寄送方式     | String: [home_delivery, ...(待補)] |
+
+
+
+
+
+## 取得某筆訂單的資訊
+
+```javascript
+const api = `${process.env.VUE_APP_API}/users/orders/${id}`;
+const headers = { Authorization: jwtToken };
+axios
+  .get(api, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Success Response 200
+
+```json
+{
+  "id": 156,
+  "status": "pending",
+  "shipping_status": "in_preparation",
+  "payment_status": "outstanding",
+  "payment_method": "cash_on_delivery",
+  "note": null,
+  "items": [
+    {
+      "id": 159,
+      "name": "Ed Ondricka",
+      "unit_price": 134,
+      "quantity": 6,
+      "package_type": "half_pound"
+    }
+  ],
+  "shipping_info": {
+    "name": "Alena Runte III",
+    "phone_number": "0912345678",
+    "address": "address",
+    "email": "floretta@dare.org",
+    "shipping_method": "home_delivery",
+    "shipping_fee": 100
+  }
+}
+```
+
+回傳 ID 所對應的豆子的詳細資訊
+
+### HTTP Request (need JWT token)
+
+`GET /users/orders/:id` 
+
+### URL Parameters
+
+| Parameter | Description |
+| --------- | ----------- |
+| id        | 訂單的 ID   |
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 管理者頁面 / 豆單管理
 
