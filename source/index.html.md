@@ -378,7 +378,8 @@ axios
   "cart_item": {
     "product_id": 152, 
     "package_type": "half_pound", 
-    "quantity": 1
+    "quantity": 1,
+    "ground": true,
   }
 }
 ```
@@ -391,7 +392,8 @@ axios
   "product_name": "耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1", 
   "package_type": "half_pound", 
   "quantity": 1, 
-  "unit_price": 450
+  "unit_price": 450,
+  "ground": true,
 }
 ```
 
@@ -419,6 +421,7 @@ axios
 | product_id   | 商品 ID     | Integer                                   |
 | package_type | 包裝        | String: [half_pound, one_pound, drip_bag] |
 | quantity     | 數量        | Integer                                   |
+| ground       | 是否磨粉    | Boolean                                   |
 
 
 
@@ -430,7 +433,7 @@ axios
 
 
 
-## 更新購物車內某商品的購買數量
+## 更新購物車商品資訊
 
 ```javascript
 const api = `${process.env.VUE_APP_API}/users/cart_items/${product_id}`;
@@ -451,6 +454,7 @@ axios
 ```json
 "cart_item": {
   "quantity": 2,
+  "ground": true,
 }
 ```
 
@@ -462,7 +466,8 @@ axios
   "product_id": 152, 
   "package_type": "half_pound", 
   "product_name": "耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1", 
-  "unit_price": 450
+  "unit_price": 450,
+  "ground": true,
 }
 ```
 
@@ -496,6 +501,7 @@ axios
 | Parameter | Description | Type    |
 | --------- | ----------- | ------- |
 | quantity  | 數量        | Integer |
+| ground    | 是否磨粉    | Boolean |
 
 
 
