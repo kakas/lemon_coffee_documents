@@ -350,7 +350,7 @@
                     <a href="#2d32c645d1" class="toc-h2 toc-link" data-title="將商品加入購物車">將商品加入購物車</a>
                   </li>
                   <li>
-                    <a href="#2e63cc7e3c" class="toc-h2 toc-link" data-title="更新購物車內某商品的購買數量">更新購物車內某商品的購買數量</a>
+                    <a href="#c9ffd013d5" class="toc-h2 toc-link" data-title="更新購物車商品資訊">更新購物車商品資訊</a>
                   </li>
                   <li>
                     <a href="#2c77dffc23" class="toc-h2 toc-link" data-title="將商品從購物車移除">將商品從購物車移除</a>
@@ -681,7 +681,8 @@
   </span><span class="nl">"cart_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="p">,</span><span class="w"> 
     </span><span class="nl">"package_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"half_pound"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ground"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -693,7 +694,8 @@
   </span><span class="nl">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1"</span><span class="p">,</span><span class="w"> 
   </span><span class="nl">"package_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"half_pound"</span><span class="p">,</span><span class="w"> 
   </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
-  </span><span class="nl">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="w">
+  </span><span class="nl">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ground"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -728,8 +730,13 @@
 <td>數量</td>
 <td>Integer</td>
 </tr>
+<tr>
+<td>ground</td>
+<td>是否磨粉</td>
+<td>Boolean</td>
+</tr>
 </tbody></table>
-<h2 id='2e63cc7e3c'>更新購物車內某商品的購買數量</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/cart_items/</span><span class="p">${</span><span class="nx">product_id</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<h2 id='c9ffd013d5'>更新購物車商品資訊</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/cart_items/</span><span class="p">${</span><span class="nx">product_id</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
 <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
 <span class="nx">axios</span>
@@ -746,6 +753,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"cart_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ground"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -756,7 +764,8 @@
   </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">152</span><span class="p">,</span><span class="w"> 
   </span><span class="nl">"package_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"half_pound"</span><span class="p">,</span><span class="w"> 
   </span><span class="nl">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1"</span><span class="p">,</span><span class="w"> 
-  </span><span class="nl">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="w">
+  </span><span class="nl">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ground"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -795,6 +804,11 @@
 <td>quantity</td>
 <td>數量</td>
 <td>Integer</td>
+</tr>
+<tr>
+<td>ground</td>
+<td>是否磨粉</td>
+<td>Boolean</td>
 </tr>
 </tbody></table>
 <h2 id='2c77dffc23'>將商品從購物車移除</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/cart_items/</span><span class="p">${</span><span class="nx">product_id</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
@@ -843,6 +857,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some note"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash_on_delivery"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"shipping_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kakas"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0912345678"</span><span class="p">,</span><span class="w">
@@ -862,6 +877,7 @@
   </span><span class="nl">"payment_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outstanding"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash_on_delivery"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some note"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-22T12:46:49.278Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">146</span><span class="p">,</span><span class="w">
@@ -907,6 +923,11 @@
 <td>String</td>
 </tr>
 <tr>
+<td>payment_method</td>
+<td>付款方式</td>
+<td>String [cash_on_delivery]</td>
+</tr>
+<tr>
 <td>shipping_info.name</td>
 <td>收件人姓名</td>
 <td>String</td>
@@ -929,7 +950,7 @@
 <tr>
 <td>shipping_info.shipping_method</td>
 <td>寄送方式</td>
-<td>String: [home_delivery, ...(待補)]</td>
+<td>String [home_delivery]</td>
 </tr>
 </tbody></table>
 <h2 id='7c692f78ee'>取得某筆訂單的資訊</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/orders/</span><span class="p">${</span><span class="nx">id</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
