@@ -571,6 +571,7 @@ axios
 ```json
 {
   "note": "some note",
+  "payment_method": "cash_on_delivery",
   "shipping_info": {
     "name": "kakas",
     "phone_number": "0912345678",
@@ -591,6 +592,7 @@ axios
   "payment_status": "outstanding",
   "payment_method": "cash_on_delivery",
   "note": "some note",
+  "created_at": "2022-01-22T12:46:49.278Z",
   "items": [
     {
       "id": 146,
@@ -631,14 +633,15 @@ axios
 
 ### Data Parameters
 
-| Parameter                     | Description  | Type                               |
-| ----------------------------- | ------------ | ---------------------------------- |
-| note                          | 備註         | String                             |
-| shipping_info.name            | 收件人姓名   | String                             |
-| shipping_info.phone_number    | 收件人電話   | String                             |
-| shipping_info.address         | 收件人地址   | String                             |
-| shipping_info.email           | 收件人 email | String                             |
-| shipping_info.shipping_method | 寄送方式     | String: [home_delivery, ...(待補)] |
+| Parameter                     | Description  | Type                      |
+| ----------------------------- | ------------ | ------------------------- |
+| note                          | 備註         | String                    |
+| payment_method                | 付款方式     | String [cash_on_delivery] |
+| shipping_info.name            | 收件人姓名   | String                    |
+| shipping_info.phone_number    | 收件人電話   | String                    |
+| shipping_info.address         | 收件人地址   | String                    |
+| shipping_info.email           | 收件人 email | String                    |
+| shipping_info.shipping_method | 寄送方式     | String [home_delivery]    |
 
 
 
