@@ -311,9 +311,9 @@ axios
 
 
 
-# 購物車
+# 使用者的購物車
 
-## 使用者的購物車商品列表
+## 購物車商品列表
 
 ```javascript
 const api = `${process.env.VUE_APP_API}/users/cart_items`;
@@ -455,7 +455,6 @@ axios
 ```json
 "cart_item": {
   "quantity": 2,
-  "ground": true,
 }
 ```
 
@@ -502,7 +501,6 @@ axios
 | Parameter | Description | Type    |
 | --------- | ----------- | ------- |
 | quantity  | 數量        | Integer |
-| ground    | 是否磨粉    | Boolean |
 
 
 
