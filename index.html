@@ -341,10 +341,10 @@
               </ul>
           </li>
           <li>
-            <a href="#02c1e931de" class="toc-h1 toc-link" data-title="購物車">購物車</a>
+            <a href="#f097fa161c" class="toc-h1 toc-link" data-title="使用者的購物車">使用者的購物車</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#4f47860e3b" class="toc-h2 toc-link" data-title="使用者的購物車商品列表">使用者的購物車商品列表</a>
+                    <a href="#88413ad67c" class="toc-h2 toc-link" data-title="購物車商品列表">購物車商品列表</a>
                   </li>
                   <li>
                     <a href="#2d32c645d1" class="toc-h2 toc-link" data-title="將商品加入購物車">將商品加入購物車</a>
@@ -636,7 +636,7 @@
 <p>豆子詳細資訊</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET /products/:id</code></p>
-<h1 id='02c1e931de'>購物車</h1><h2 id='4f47860e3b'>使用者的購物車商品列表</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/cart_items`</span><span class="p">;</span>
+<h1 id='f097fa161c'>使用者的購物車</h1><h2 id='88413ad67c'>購物車商品列表</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/cart_items`</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
 <span class="nx">axios</span>
   <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">api</span><span class="p">,</span> <span class="p">{</span> <span class="nx">headers</span> <span class="p">})</span>
@@ -754,7 +754,6 @@
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"cart_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ground"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -805,11 +804,6 @@
 <td>quantity</td>
 <td>數量</td>
 <td>Integer</td>
-</tr>
-<tr>
-<td>ground</td>
-<td>是否磨粉</td>
-<td>Boolean</td>
 </tr>
 </tbody></table>
 <h2 id='2c77dffc23'>將商品從購物車移除</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/users/cart_items/</span><span class="p">${</span><span class="nx">product_id</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
