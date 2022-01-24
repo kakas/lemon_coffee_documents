@@ -313,7 +313,7 @@ axios
 
 # 購物車
 
-## 取得使用者目前加入購物車的商品
+## 使用者的購物車商品列表
 
 ```javascript
 const api = `${process.env.VUE_APP_API}/users/cart_items`;
@@ -339,6 +339,7 @@ axios
     "unit_price": 450
     "quantity": 1,
     "product_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.jpg",
+    "ground": false
   }
 ]
 ```
