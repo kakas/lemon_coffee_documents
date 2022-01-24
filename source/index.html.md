@@ -553,6 +553,65 @@ axios
 
 # 使用者訂單相關
 
+## 訂單列表
+
+```javascript
+const api = `${process.env.VUE_APP_API}/users/orders`;
+const headers = { Authorization: jwtToken };
+axios
+  .get(api, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Success Response 200
+
+```json
+[
+  {
+    "id": 31,
+    "status": "pending",
+    "shipping_status": "in_preparation",
+    "payment_status": "outstanding",
+    "payment_method": "cash_on_delivery",
+    "note": null,
+    "created_at": "2022-01-24T13:50:28.000Z",
+    "items": [
+      {
+        "id": 31,
+        "name": "Msgr. Alane Botsford",
+        "unit_price": 135,
+        "quantity": 4,
+        "package_type": "half_pound"
+      }
+    ],
+    "shipping_info": {
+      "name": "Fred Frami",
+      "phone_number": "0912345678",
+      "address": "address",
+      "email": "danyel.krajcik@larson.org",
+      "shipping_method": "home_delivery",
+      "shipping_fee": 100
+    }
+  },
+  ...
+]
+```
+
+
+
+### HTTP Request  (need JWT token)
+
+`GET /users/orders`
+
+
+
+
+
 
 
 ## 建立訂單
