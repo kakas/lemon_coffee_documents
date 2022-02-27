@@ -1081,7 +1081,8 @@
     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"薩爾瓦多"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"聖荷西莊園"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"variety"</span><span class="p">:</span><span class="w"> </span><span class="s2">"阿拉比卡"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="w">
+    </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
@@ -1113,7 +1114,8 @@
   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"薩爾瓦多"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"聖荷西莊園"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"variety"</span><span class="p">:</span><span class="w"> </span><span class="s2">"阿拉比卡"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="w">
+  </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -1130,7 +1132,8 @@
   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"薩爾瓦多"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"聖荷西莊園"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"variety"</span><span class="p">:</span><span class="w"> </span><span class="s2">"阿拉比卡"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="w">
+  </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -1200,6 +1203,11 @@
 <td>處理法</td>
 <td>String</td>
 </tr>
+<tr>
+<td>description</td>
+<td>風味描述</td>
+<td>String</td>
+</tr>
 </tbody></table>
 <h2 id='d283815a4d'>取得某支豆子的資料</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">api</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VUE_APP_API</span><span class="p">}</span><span class="s2">/admin/products/</span><span class="p">${</span><span class="nx">id</span><span class="p">}</span><span class="s2">/edit`</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="na">Authorization</span><span class="p">:</span> <span class="nx">jwtToken</span> <span class="p">};</span>
@@ -1226,7 +1234,8 @@
   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"薩爾瓦多"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"聖荷西莊園"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"variety"</span><span class="p">:</span><span class="w"> </span><span class="s2">"阿拉比卡"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="w">
+  </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>回傳 ID 所對應的豆子的詳細資訊</p>
@@ -1269,7 +1278,8 @@
   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"薩爾瓦多"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"聖荷西莊園"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"variety"</span><span class="p">:</span><span class="w"> </span><span class="s2">"阿拉比卡"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="w">
+  </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -1286,7 +1296,8 @@
   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"薩爾瓦多"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"聖荷西莊園"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"variety"</span><span class="p">:</span><span class="w"> </span><span class="s2">"阿拉比卡"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="w">
+  </span><span class="nl">"processing_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"水洗"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -1366,6 +1377,11 @@
 <tr>
 <td>processing_method</td>
 <td>處理法</td>
+<td>String</td>
+</tr>
+<tr>
+<td>description</td>
+<td>風味描述</td>
 <td>String</td>
 </tr>
 </tbody></table>
