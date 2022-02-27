@@ -803,22 +803,21 @@ axios
 ```json
 [
   {
-    "id": 1,
-    "name": "耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1",
+    "id": 91,
+    "name": "1 - 耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1",
     "half_pound_price": 450,
     "one_pound_price": 810,
     "drip_bag_price": 40,
     "roast": 1,
-    "flavor": ["藍莓", "柑橘", "花香"]
-  },
-  {
-    "id": 2,
-    "name": "水洗 衣索比亞 古吉 吉格薩",
-    "half_pound_price": 450,
-    "one_pound_price": 810,
-    "drip_bag_price": 40,
-    "roast": 1,
-    "flavor": ["巧克力"]
+    "flavor": [
+      "藍莓",
+      "柑橘",
+      "花香"
+    ],
+    "country": "薩爾瓦多",
+    "area": "聖荷西莊園",
+    "variety": "阿拉比卡",
+    "processing_method": "水洗"
   }
 ]
 ```
@@ -858,7 +857,11 @@ axios
   "one_pound_price": 810,
   "drip_bag_price": 40,
   "roast": 1,
-  "flavor": ["藍莓", "柑橘", "花香"]
+  "flavor": ["藍莓", "柑橘", "花香"],
+  "country": "薩爾瓦多",
+  "area": "聖荷西莊園",
+  "variety": "阿拉比卡",
+  "processing_method": "水洗"
 }
 ```
 
@@ -872,7 +875,11 @@ axios
   "one_pound_price": 810,
   "drip_bag_price": 40,
   "roast": 1,
-  "flavor": ["藍莓", "柑橘", "花香"]
+  "flavor": ["藍莓", "柑橘", "花香"],
+  "country": "薩爾瓦多",
+  "area": "聖荷西莊園",
+  "variety": "阿拉比卡",
+  "processing_method": "水洗"
 }
 ```
 
@@ -893,14 +900,18 @@ axios
 
 ### Data Parameters
 
-| Parameter        | Description | Type           |
-| ---------------- | ----------- | -------------- |
-| name             | 名稱        | String         |
-| half_pound_price | 半磅價格    | Integer        |
-| one_pound_price  | 一磅價格    | Integer        |
-| drip_bag_price   | 濾掛價格    | Integer        |
-| roast            | 烘焙程度    | Integer (1..5) |
-| flavor           | 風味        | [String]       |
+| Parameter         | Description | Type           |
+| ----------------- | ----------- | -------------- |
+| name              | 名稱        | String         |
+| half_pound_price  | 半磅價格    | Integer        |
+| one_pound_price   | 一磅價格    | Integer        |
+| drip_bag_price    | 濾掛價格    | Integer        |
+| roast             | 烘焙程度    | Integer (1..5) |
+| flavor            | 風味        | [String]       |
+| country           | 國家        | String         |
+| area              | 產區        | String         |
+| variety           | 品種        | String         |
+| processing_method | 處理法      | String         |
 
 
 
@@ -936,7 +947,11 @@ axios
   "one_pound_price": 810,
   "drip_bag_price": 40,
   "roast": 1,
-  "flavor": ["藍莓", "柑橘", "花香"]
+  "flavor": ["藍莓", "柑橘", "花香"],
+  "country": "薩爾瓦多",
+  "area": "聖荷西莊園",
+  "variety": "阿拉比卡",
+  "processing_method": "水洗"
 }
 ```
 
@@ -981,7 +996,11 @@ axios
   "one_pound_price": 300,
   "drip_bag_price": 50,
   "roast": 2,
-  "flavor": ["新的風味"]
+  "flavor": ["新的風味"],
+  "country": "薩爾瓦多",
+  "area": "聖荷西莊園",
+  "variety": "阿拉比卡",
+  "processing_method": "水洗"
 }
 ```
 
@@ -995,7 +1014,11 @@ axios
   "one_pound_price": 300, 
   "drip_bag_price": 50, 
   "roast": 2, 
-  "flavor": ["新的風味"]
+  "flavor": ["新的風味"],
+  "country": "薩爾瓦多",
+  "area": "聖荷西莊園",
+  "variety": "阿拉比卡",
+  "processing_method": "水洗"
 }
 ```
 
@@ -1020,14 +1043,18 @@ axios
 
 ### Data Parameters
 
-| Parameter        | Description | Type           |
-| ---------------- | ----------- | -------------- |
-| name             | 名稱        | String         |
-| half_pound_price | 半磅價格    | Integer        |
-| one_pound_price  | 一磅價格    | Integer        |
-| drip_bag_price   | 濾掛價格    | Integer        |
-| roast            | 烘焙程度    | Integer (1..5) |
-| flavor           | 風味        | [String]       |
+| Parameter         | Description | Type           |
+| ----------------- | ----------- | -------------- |
+| name              | 名稱        | String         |
+| half_pound_price  | 半磅價格    | Integer        |
+| one_pound_price   | 一磅價格    | Integer        |
+| drip_bag_price    | 濾掛價格    | Integer        |
+| roast             | 烘焙程度    | Integer (1..5) |
+| flavor            | 風味        | [String]       |
+| country           | 國家        | String         |
+| area              | 產區        | String         |
+| variety           | 品種        | String         |
+| processing_method | 處理法      | String         |
 
 
 
