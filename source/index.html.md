@@ -995,9 +995,7 @@ axios
   "one_pound_price": 300, 
   "drip_bag_price": 50, 
   "roast": 2, 
-  "flavor": ["新的風味"], 
-  "created_at": "2021-12-09T10:18:55.174Z", 
-  "updated_at": "2021-12-09T10:18:55.192Z"
+  "flavor": ["新的風味"]
 }
 ```
 
