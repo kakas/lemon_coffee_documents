@@ -817,7 +817,8 @@ axios
     "country": "薩爾瓦多",
     "area": "聖荷西莊園",
     "variety": "阿拉比卡",
-    "processing_method": "水洗"
+    "processing_method": "水洗",
+    "description": "花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"
   }
 ]
 ```
@@ -861,7 +862,8 @@ axios
   "country": "薩爾瓦多",
   "area": "聖荷西莊園",
   "variety": "阿拉比卡",
-  "processing_method": "水洗"
+  "processing_method": "水洗",
+  "description": "花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"
 }
 ```
 
@@ -879,7 +881,8 @@ axios
   "country": "薩爾瓦多",
   "area": "聖荷西莊園",
   "variety": "阿拉比卡",
-  "processing_method": "水洗"
+  "processing_method": "水洗",
+  "description": "花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"
 }
 ```
 
@@ -912,6 +915,7 @@ axios
 | area              | 產區        | String         |
 | variety           | 品種        | String         |
 | processing_method | 處理法      | String         |
+| description       | 風味描述    | String         |
 
 
 
@@ -951,7 +955,8 @@ axios
   "country": "薩爾瓦多",
   "area": "聖荷西莊園",
   "variety": "阿拉比卡",
-  "processing_method": "水洗"
+  "processing_method": "水洗",
+  "description": "花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"
 }
 ```
 
@@ -1000,7 +1005,8 @@ axios
   "country": "薩爾瓦多",
   "area": "聖荷西莊園",
   "variety": "阿拉比卡",
-  "processing_method": "水洗"
+  "processing_method": "水洗",
+  "description": "花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"
 }
 ```
 
@@ -1018,7 +1024,8 @@ axios
   "country": "薩爾瓦多",
   "area": "聖荷西莊園",
   "variety": "阿拉比卡",
-  "processing_method": "水洗"
+  "processing_method": "水洗",
+  "description": "花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"
 }
 ```
 
@@ -1055,6 +1062,7 @@ axios
 | area              | 產區        | String         |
 | variety           | 品種        | String         |
 | processing_method | 處理法      | String         |
+| description       | 風味描述    | String         |
 
 
 
