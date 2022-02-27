@@ -58,7 +58,7 @@ axios
   "id": 264, 
   "email": "user@example.com", 
   "created_at": "2021-12-09T10:39:40.713Z", 
-  "updated_at": "2021-12-09T10:39:40.713Z",
+  "updated_at": "2021-12-09T10:39:40.713Z"
 }
 ```
 
@@ -136,7 +136,7 @@ axios
   "id": 1, 
   "email": "user@example.com", 
   "created_at": "2021-12-09T10:39:40.713Z", 
-  "updated_at": "2021-12-09T10:39:40.713Z",
+  "updated_at": "2021-12-09T10:39:40.713Z"
 }
 ```
 
@@ -248,7 +248,7 @@ axios
     "flavor": ["巧克力"],
     "created_at": "2021-12-09T13:10:26.072Z", 
     "updated_at": "2021-12-09T13:10:26.072Z"
-  },
+  }
 ]
 ```
 
@@ -287,7 +287,7 @@ axios
   "drip_bag_price": 40,
   "roast": 1,
   "flavor": ["藍莓", "柑橘", "花香"],
-  "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.jpg",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.jpg"
 }
 ```
 
@@ -336,7 +336,7 @@ axios
     "product_id": 137, 
     "product_name": "耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1", 
     "package_type": "half_pound", 
-    "unit_price": 450
+    "unit_price": 450,
     "quantity": 1,
     "product_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.jpg",
     "ground": false
@@ -380,7 +380,7 @@ axios
     "product_id": 152, 
     "package_type": "half_pound", 
     "quantity": 1,
-    "ground": true,
+    "ground": true
   }
 }
 ```
@@ -394,7 +394,7 @@ axios
   "package_type": "half_pound", 
   "quantity": 1, 
   "unit_price": 450,
-  "ground": true,
+  "ground": true
 }
 ```
 
@@ -403,7 +403,7 @@ axios
 ```json
 { 
   "quantity": ["must be greater than 0"], 
-  "product": ["must exist"],
+  "product": ["must exist"]
 }
 ```
 
@@ -454,7 +454,7 @@ axios
 
 ```json
 "cart_item": {
-  "quantity": 2,
+  "quantity": 2
 }
 ```
 
@@ -467,7 +467,7 @@ axios
   "package_type": "half_pound", 
   "product_name": "耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1", 
   "unit_price": 450,
-  "ground": true,
+  "ground": true
 }
 ```
 
@@ -475,7 +475,7 @@ axios
 
 ```json
 { 
-  "quantity": ["must be greater than 0"], 
+  "quantity": ["must be greater than 0"]
 }
 ```
 
@@ -809,7 +809,7 @@ axios
     "one_pound_price": 810,
     "drip_bag_price": 40,
     "roast": 1,
-    "flavor": ["藍莓", "柑橘", "花香"],
+    "flavor": ["藍莓", "柑橘", "花香"]
   },
   {
     "id": 2,
@@ -818,8 +818,8 @@ axios
     "one_pound_price": 810,
     "drip_bag_price": 40,
     "roast": 1,
-    "flavor": ["巧克力"],
-  },
+    "flavor": ["巧克力"]
+  }
 ]
 ```
 
@@ -858,7 +858,7 @@ axios
   "one_pound_price": 810,
   "drip_bag_price": 40,
   "roast": 1,
-  "flavor": ["藍莓", "柑橘", "花香"],
+  "flavor": ["藍莓", "柑橘", "花香"]
 }
 ```
 
@@ -872,7 +872,7 @@ axios
   "one_pound_price": 810,
   "drip_bag_price": 40,
   "roast": 1,
-  "flavor": ["藍莓", "柑橘", "花香"],
+  "flavor": ["藍莓", "柑橘", "花香"]
 }
 ```
 
@@ -881,7 +881,7 @@ axios
 ```json
 { 
   "name": ["can't be blank"], 
-  "roast": ["can't be blank"],
+  "roast": ["can't be blank"]
 }
 ```
 
@@ -936,7 +936,7 @@ axios
   "one_pound_price": 810,
   "drip_bag_price": 40,
   "roast": 1,
-  "flavor": ["藍莓", "柑橘", "花香"],
+  "flavor": ["藍莓", "柑橘", "花香"]
 }
 ```
 
@@ -981,7 +981,7 @@ axios
   "one_pound_price": 300,
   "drip_bag_price": 50,
   "roast": 2,
-  "flavor": ["新的風味"],
+  "flavor": ["新的風味"]
 }
 ```
 
@@ -1006,7 +1006,7 @@ axios
 ```json
 { 
   "name": ["can't be blank"], 
-  "roast": ["can't be blank"],
+  "roast": ["can't be blank"]
 }
 ```
 
