@@ -586,7 +586,8 @@ axios
         "name": "Msgr. Alane Botsford",
         "unit_price": 135,
         "quantity": 4,
-        "package_type": "half_pound"
+        "package_type": "half_pound",
+        "ground": false
       }
     ],
     "shipping_info": {
@@ -663,7 +664,8 @@ axios
       "name": "1 - 耶家雪菲 日曬 古吉 夏奇索 魔魔拉單一莊園 G1",
       "unit_price": 450,
       "quantity": 1,
-      "package_type": "half_pound"
+      "package_type": "half_pound",
+      "ground": false
     }
   ],
   "shipping_info": {
@@ -742,7 +744,8 @@ axios
       "name": "Ed Ondricka",
       "unit_price": 134,
       "quantity": 6,
-      "package_type": "half_pound"
+      "package_type": "half_pound",
+      "ground": false
     }
   ],
   "shipping_info": {
