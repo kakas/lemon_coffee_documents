@@ -235,17 +235,11 @@ axios
     "drip_bag_price": 40,
     "roast": 1,
     "flavor": ["藍莓", "柑橘", "花香"],
-    "created_at": "2021-12-09T13:10:26.072Z", 
-    "updated_at": "2021-12-09T13:10:26.072Z"
-  },
-  {
-    "id": 2,
-    "name": "水洗 衣索比亞 古吉 吉格薩",
-    "half_pound_price": 450,
-    "one_pound_price": 810,
-    "drip_bag_price": 40,
-    "roast": 1,
-    "flavor": ["巧克力"],
+    "country": "薩爾瓦多",
+    "area": "聖荷西莊園",
+    "variety": "阿拉比卡",
+    "processing_method": "水洗",
+    "description": "花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"
     "created_at": "2021-12-09T13:10:26.072Z", 
     "updated_at": "2021-12-09T13:10:26.072Z"
   }
@@ -287,7 +281,12 @@ axios
   "drip_bag_price": 40,
   "roast": 1,
   "flavor": ["藍莓", "柑橘", "花香"],
-  "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.jpg"
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.jpg",
+  "country": "薩爾瓦多",
+  "area": "聖荷西莊園",
+  "variety": "阿拉比卡",
+  "processing_method": "水洗",
+  "description": "花神給予入口一些柑橘香氣的柔順，帶著太妃糖甜感，冷卻時會有生巧克力且明亮細緻的酸質。"
 }
 ```
 
