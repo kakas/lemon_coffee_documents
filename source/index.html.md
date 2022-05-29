@@ -657,6 +657,12 @@ axios
   "payment_method": "cash_on_delivery",
   "note": "some note",
   "created_at": "2022-01-22T12:46:49.278Z",
+  "may_confirm?": true,
+  "may_finish?": false,
+  "may_cancel?": true,
+  "may_to_shipping?": true,
+  "may_to_arrived?": false,
+  "may_to_picked_up?": false,
   "items": [
     {
       "id": 146,
