@@ -737,6 +737,13 @@ axios
   "payment_status": "outstanding",
   "payment_method": "cash_on_delivery",
   "note": null,
+  "created_at": "2022-05-29T04:58:30.000Z",
+  "may_confirm?": true,
+  "may_finish?": false,
+  "may_cancel?": true,
+  "may_to_shipping?": true,
+  "may_to_arrived?": false,
+  "may_to_picked_up?": false,
   "items": [
     {
       "id": 159,
