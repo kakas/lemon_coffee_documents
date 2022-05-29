@@ -930,13 +930,253 @@ axios
 
 
 
+## 修改某筆訂單的狀態
+
+```javascript
+const api = `${process.env.VUE_APP_API}/admin/orders/${order_id}/status`;
+const headers = { Authorization: jwtToken };
+const data = { ... };
+axios
+  .put(api, data, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Request Data example
+
+```json
+{
+  "status": "confirmed",
+}
+```
+
+> Success Response 200
+
+```json
+{
+  "id": 156,
+  "status": "pending",
+  "shipping_status": "in_preparation",
+  "payment_status": "outstanding",
+  "payment_method": "cash_on_delivery",
+  "note": null,
+  "created_at": "2022-05-29T04:58:30.000Z",
+  "may_confirm?": true,
+  "may_finish?": false,
+  "may_cancel?": true,
+  "may_to_shipping?": true,
+  "may_to_arrived?": false,
+  "may_to_picked_up?": false,
+  "items": [
+    {
+      "id": 159,
+      "name": "Ed Ondricka",
+      "unit_price": 134,
+      "quantity": 6,
+      "package_type": "half_pound",
+      "ground": false
+    }
+  ],
+  "shipping_info": {
+    "name": "Alena Runte III",
+    "phone_number": "0912345678",
+    "address": "address",
+    "email": "floretta@dare.org",
+    "shipping_method": "home_delivery",
+    "shipping_fee": 100
+  }
+}
+```
+
+
+
+### HTTP Request  (need JWT token)
+
+`PUT /admin/orders/:order_id/status`
+
+### URL Parameters
+
+| Parameter | Description |
+| --------- | ----------- |
+| order_id  | 訂單的 ID   |
+
+### Data Parameters
+
+| Parameter | Description  | Type                                    |
+| --------- | ------------ | --------------------------------------- |
+| status    | 欲修改的狀態 | String: [confirmed, finished, canceled] |
 
 
 
 
 
+## 修改某筆訂單的運送狀態
+
+```javascript
+const api = `${process.env.VUE_APP_API}/admin/orders/${order_id}/shipping_status`;
+const headers = { Authorization: jwtToken };
+const data = { ... };
+axios
+  .put(api, data, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Request Data example
+
+```json
+{
+  "shipping_status": "shipping",
+}
+```
+
+> Success Response 200
+
+```json
+{
+  "id": 156,
+  "status": "pending",
+  "shipping_status": "in_preparation",
+  "payment_status": "outstanding",
+  "payment_method": "cash_on_delivery",
+  "note": null,
+  "created_at": "2022-05-29T04:58:30.000Z",
+  "may_confirm?": true,
+  "may_finish?": false,
+  "may_cancel?": true,
+  "may_to_shipping?": true,
+  "may_to_arrived?": false,
+  "may_to_picked_up?": false,
+  "items": [
+    {
+      "id": 159,
+      "name": "Ed Ondricka",
+      "unit_price": 134,
+      "quantity": 6,
+      "package_type": "half_pound",
+      "ground": false
+    }
+  ],
+  "shipping_info": {
+    "name": "Alena Runte III",
+    "phone_number": "0912345678",
+    "address": "address",
+    "email": "floretta@dare.org",
+    "shipping_method": "home_delivery",
+    "shipping_fee": 100
+  }
+}
+```
 
 
+
+### HTTP Request  (need JWT token)
+
+`PUT /admin/orders/:order_id/shipping_status`
+
+### URL Parameters
+
+| Parameter | Description |
+| --------- | ----------- |
+| order_id  | 訂單的 ID   |
+
+### Data Parameters
+
+| Parameter       | Description      | Type                                   |
+| --------------- | ---------------- | -------------------------------------- |
+| shipping_status | 欲修改的運送狀態 | String: [shipping, arrived, picked_up] |
+
+
+
+
+
+## 修改某筆訂單的付款狀態
+
+```javascript
+const api = `${process.env.VUE_APP_API}/admin/orders/${order_id}/payment_status`;
+const headers = { Authorization: jwtToken };
+const data = { ... };
+axios
+  .put(api, data, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Request Data example
+
+```json
+{
+  "payment_status": "paid",
+}
+```
+
+> Success Response 200
+
+```json
+{
+  "id": 156,
+  "status": "pending",
+  "shipping_status": "in_preparation",
+  "payment_status": "outstanding",
+  "payment_method": "cash_on_delivery",
+  "note": null,
+  "created_at": "2022-05-29T04:58:30.000Z",
+  "may_confirm?": true,
+  "may_finish?": false,
+  "may_cancel?": true,
+  "may_to_shipping?": true,
+  "may_to_arrived?": false,
+  "may_to_picked_up?": false,
+  "items": [
+    {
+      "id": 159,
+      "name": "Ed Ondricka",
+      "unit_price": 134,
+      "quantity": 6,
+      "package_type": "half_pound",
+      "ground": false
+    }
+  ],
+  "shipping_info": {
+    "name": "Alena Runte III",
+    "phone_number": "0912345678",
+    "address": "address",
+    "email": "floretta@dare.org",
+    "shipping_method": "home_delivery",
+    "shipping_fee": 100
+  }
+}
+```
+
+
+
+### HTTP Request  (need JWT token)
+
+`PUT /admin/orders/:order_id/payment_status`
+
+### URL Parameters
+
+| Parameter | Description |
+| --------- | ----------- |
+| order_id  | 訂單的 ID   |
+
+### Data Parameters
+
+| Parameter      | Description      | Type           |
+| -------------- | ---------------- | -------------- |
+| payment_status | 欲修改的付款狀態 | String: [paid] |
 
 
 
