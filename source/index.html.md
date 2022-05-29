@@ -791,6 +791,161 @@ axios
 
 
 
+# 管理者頁面/訂單管理
+
+## 訂單列表
+
+```javascript
+const api = `${process.env.VUE_APP_API}/admin/orders`;
+const headers = { Authorization: jwtToken };
+axios
+  .get(api, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Success Response 200
+
+```json
+[
+  {
+    "id": 31,
+    "status": "pending",
+    "shipping_status": "in_preparation",
+    "payment_status": "outstanding",
+    "payment_method": "cash_on_delivery",
+    "note": null,
+    "created_at": "2022-01-24T13:50:28.000Z",
+    "may_confirm?": true,
+    "may_finish?": false,
+    "may_cancel?": true,
+    "may_to_shipping?": true,
+    "may_to_arrived?": false,
+    "may_to_picked_up?": false,
+    "items": [
+      {
+        "id": 31,
+        "name": "Msgr. Alane Botsford",
+        "unit_price": 135,
+        "quantity": 4,
+        "package_type": "half_pound",
+        "ground": false
+      }
+    ],
+    "shipping_info": {
+      "name": "Fred Frami",
+      "phone_number": "0912345678",
+      "address": "address",
+      "email": "danyel.krajcik@larson.org",
+      "shipping_method": "home_delivery",
+      "shipping_fee": 100
+    }
+  },
+  ...
+]
+```
+
+
+
+### HTTP Request  (need JWT token)
+
+`GET /admin/orders`
+
+
+
+
+
+
+
+## 取得某筆訂單的資訊
+
+```javascript
+const api = `${process.env.VUE_APP_API}/admin/orders/${id}`;
+const headers = { Authorization: jwtToken };
+axios
+  .get(api, { headers })
+  .then((response) => {
+    // ...
+  })
+  .catch((error) => {
+    // ...
+  });
+```
+
+> Success Response 200
+
+```json
+{
+  "id": 156,
+  "status": "pending",
+  "shipping_status": "in_preparation",
+  "payment_status": "outstanding",
+  "payment_method": "cash_on_delivery",
+  "note": null,
+  "created_at": "2022-05-29T04:58:30.000Z",
+  "may_confirm?": true,
+  "may_finish?": false,
+  "may_cancel?": true,
+  "may_to_shipping?": true,
+  "may_to_arrived?": false,
+  "may_to_picked_up?": false,
+  "items": [
+    {
+      "id": 159,
+      "name": "Ed Ondricka",
+      "unit_price": 134,
+      "quantity": 6,
+      "package_type": "half_pound",
+      "ground": false
+    }
+  ],
+  "shipping_info": {
+    "name": "Alena Runte III",
+    "phone_number": "0912345678",
+    "address": "address",
+    "email": "floretta@dare.org",
+    "shipping_method": "home_delivery",
+    "shipping_fee": 100
+  }
+}
+```
+
+回傳 ID 所對應的豆子的詳細資訊
+
+### HTTP Request (need JWT token)
+
+`GET /admin/orders/:id` 
+
+### URL Parameters
+
+| Parameter | Description |
+| --------- | ----------- |
+| id        | 訂單的 ID   |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
