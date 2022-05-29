@@ -663,6 +663,7 @@ axios
   "may_to_shipping?": true,
   "may_to_arrived?": false,
   "may_to_picked_up?": false,
+  "may_pay?": true,
   "items": [
     {
       "id": 146,
@@ -750,6 +751,7 @@ axios
   "may_to_shipping?": true,
   "may_to_arrived?": false,
   "may_to_picked_up?": false,
+  "may_pay?": true,
   "items": [
     {
       "id": 159,
@@ -826,6 +828,7 @@ axios
     "may_to_shipping?": true,
     "may_to_arrived?": false,
     "may_to_picked_up?": false,
+    "may_pay?": true,
     "items": [
       {
         "id": 31,
@@ -893,6 +896,7 @@ axios
   "may_to_shipping?": true,
   "may_to_arrived?": false,
   "may_to_picked_up?": false,
+  "may_pay?": true,
   "items": [
     {
       "id": 159,
@@ -971,6 +975,7 @@ axios
   "may_to_shipping?": true,
   "may_to_arrived?": false,
   "may_to_picked_up?": false,
+  "may_pay?": true,
   "items": [
     {
       "id": 159,
@@ -1055,6 +1060,7 @@ axios
   "may_to_shipping?": true,
   "may_to_arrived?": false,
   "may_to_picked_up?": false,
+  "may_pay?": true,
   "items": [
     {
       "id": 159,
@@ -1139,6 +1145,7 @@ axios
   "may_to_shipping?": true,
   "may_to_arrived?": false,
   "may_to_picked_up?": false,
+  "may_pay?": true,
   "items": [
     {
       "id": 159,
